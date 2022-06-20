@@ -1,8 +1,8 @@
 <template>
+  <!-- App 根组件 -->
   <div>
-    App
-
-    <van-button type="primary">主要按钮</van-button>
+    <!-- 路由占位符 -->
+    <router-view></router-view>
   </div>
 </template>
 
