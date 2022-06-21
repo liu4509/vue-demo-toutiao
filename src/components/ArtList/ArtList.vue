@@ -18,6 +18,7 @@
           v-for="item in artList"
           :key="item.art_id"
           :article="item"
+          @remove-article="removeArticle"
         ></ArtItem>
       </van-list>
     </van-pull-refresh>
@@ -86,12 +87,25 @@ export default {
           this.finished = true;
         }
       }
+      // 关闭节流阀 防止发送多次相同的 请求接口
+      this.loading = false;
     },
     onLoad() {
       this.initArtList();
     },
     onRefresh() {
       this.initArtList(true);
+    },
+    removeArticle(id) {
+      // 对原数组进行 filter 方法的过滤
+      this.artList = this.artList.filter(
+        (item) => item.art_id.toString() !== id
+      );
+      // 判断文章剩余的数量是否小于 10
+      if (this.artList.length < 10) {
+        // 主动请求下一页数据
+        this.initArtList();
+      }
     },
   },
   components: {

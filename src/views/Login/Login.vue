@@ -85,7 +85,7 @@ export default {
       // 判断是否登录成功
       if (res.message === "OK") {
         // 把登录成功的结果，存储到 vuex 中
-        this.updateTokenInfo = res.data;
+        this.updateTokenInfo(res.data);
         // 登录成功后，跳转到主页
         this.$router.push("/");
       }
