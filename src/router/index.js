@@ -10,6 +10,7 @@ import Main from '@/views/Main/Main.vue';
 import Home from '@/views/Home/Home.vue';
 // 首页 - 我的组件
 import User from '@/views/User/User.vue';
+
 Vue.use(VueRouter)
 
 const routes = [
