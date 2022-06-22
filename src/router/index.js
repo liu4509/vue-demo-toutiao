@@ -3,13 +3,17 @@ import VueRouter from 'vue-router'
 
 // 导入需要的路由组件
 // 登录组件
-import Login from '@/views/Login/Login.vue';
+// import Login from '@/views/Login/Login.vue';
+const Login = () => import('@/views/Login/Login.vue')
 // 首页组件
-import Main from '@/views/Main/Main.vue';
+// import Main from '@/views/Main/Main.vue';
+const Main = () => import('@/views/Main/Main.vue')
 // 首页 - 主页组件
-import Home from '@/views/Home/Home.vue';
+// import Home from '@/views/Home/Home.vue';
+const Home = () => import('@/views/Home/Home.vue')
 // 首页 - 我的组件
-import User from '@/views/User/User.vue';
+// import User from '@/views/User/User.vue';
+const User = () => import('@/views/User/User.vue')
 
 Vue.use(VueRouter)
 

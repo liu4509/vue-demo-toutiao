@@ -13,11 +13,6 @@
 <script>
 export default {
   name: "Main",
-  data() {
-    return {
-      active: 0,
-    };
-  },
 };
 </script>
 
