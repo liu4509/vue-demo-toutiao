@@ -14,22 +14,30 @@ const Home = () => import('@/views/Home/Home.vue')
 // 首页 - 我的组件
 // import User from '@/views/User/User.vue';
 const User = () => import('@/views/User/User.vue')
+// 搜索组件
+// import Search from '@/views/Search/Search.vue';
+const Search = () => import('@/views/Search/Search.vue')
+// 搜索结果项
+const SearchResult = () => import('@/views/SearchResult/SearchResult.vue')
 
 Vue.use(VueRouter)
 
 const routes = [
   // 带有 name 名称的路由规则，叫做“命名路由”
   { path: '/login', component: Login, name: 'login' },
+  //加重定向解决 to 指向的问题
   {
-    path: '/', component: Main,
+    path: '/', component: Main, redirect: 'home',
     // 子路由
     children: [
       // 默认子路由 path 为空字符串  
-      { path: '', component: Home, name: 'home'},
-      { path: '/user', component: User, name: 'user'}
+      { path: 'home', component: Home, name: 'home'},
+      { path: 'user', component: User, name: 'user'}
     ]
-  }
-  
+  },
+  { path: '/search', component: Search, name: 'search'},
+  // 动态路由 :kw porps: true 可以传值
+  { path: '/search/:kw', component: SearchResult, name:'search-result', props: true}
 ]
 
 const router = new VueRouter({
