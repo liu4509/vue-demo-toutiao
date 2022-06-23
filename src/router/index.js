@@ -17,8 +17,10 @@ const User = () => import('@/views/User/User.vue')
 // 搜索组件
 // import Search from '@/views/Search/Search.vue';
 const Search = () => import('@/views/Search/Search.vue')
-// 搜索结果项
+// 搜索结果项组件
 const SearchResult = () => import('@/views/SearchResult/SearchResult.vue')
+// 文章详情组件
+const ArticleDetail  = () => import('@/views/ArticleDetail/ArticleDetail.vue')
 
 Vue.use(VueRouter)
 
@@ -37,7 +39,8 @@ const routes = [
   },
   { path: '/search', component: Search, name: 'search'},
   // 动态路由 :kw porps: true 可以传值
-  { path: '/search/:kw', component: SearchResult, name:'search-result', props: true}
+  { path: '/search/:kw', component: SearchResult, name: 'search-result', props: true },
+  { path: '/article/:id', component: ArticleDetail, name: 'art-detail',props: true}
 ]
 
 const router = new VueRouter({
