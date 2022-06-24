@@ -77,6 +77,9 @@
         >
       </div>
     </div>
+
+    <!-- 文章评论区域 -->
+    <ArtCmt v-if="article" :artId="id"></ArtCmt>
   </div>
 </template>
 
@@ -90,6 +93,8 @@ import {
   delLikeAPI,
 } from "@/api/articleAPI.js";
 
+// 评论组件
+import ArtCmt from "@/components/ArtCmt/ArtCmt.vue";
 export default {
   name: "ArticleDetail",
   // id 文章ID
@@ -157,13 +162,17 @@ export default {
       return this.article.aut_id.toString();
     },
   },
+  components: {
+    // 评论组件
+    ArtCmt,
+  },
   created() {
     this.initArticle();
   },
 };
 </script>
 
-<style lang="less" scopeds>
+<style lang="less" scoped>
 .article-container {
   padding: 10px;
 }
