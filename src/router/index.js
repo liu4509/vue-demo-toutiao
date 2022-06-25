@@ -24,6 +24,9 @@ const ArticleDetail  = () => import('@/views/ArticleDetail/ArticleDetail.vue')
 // 编辑用户信息组件
 const UserEdit  = () => import('@/views/UserEdit/UserEdit.vue')
 
+// 小思同学组件
+const Chat  = () => import('@/views/Chat/Chat.vue')
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -43,6 +46,8 @@ const routes = [
   { path: '/user/edit', component: UserEdit, name: 'user-edit' },
   // 搜索模块的路由
   { path: '/search', component: Search, name: 'search'},
+  // 小思同学模块的路由
+  { path: '/chat', component: Chat, name: 'chat'},
   // 动态路由 :kw porps: true 可以传值
   { path: '/search/:kw', component: SearchResult, name: 'search-result', props: true },
   { path: '/article/:id', component: ArticleDetail, name: 'art-detail', props: true }

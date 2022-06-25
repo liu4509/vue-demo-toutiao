@@ -40,7 +40,7 @@
         is-link
         @click="$router.push({ name: 'user-edit' })"
       />
-      <van-cell icon="chat-o" title="小思同学" is-link />
+      <van-cell icon="chat-o" title="小思同学" is-link to="/chat" />
       <van-cell icon="warning-o" title="退出登录" is-link @click="logout" />
     </van-cell-group>
   </div>
@@ -66,7 +66,6 @@ export default {
           message: "确认退出登录吗？",
         })
         .catch((err) => {
-          console.log(err);
           return err;
         });
       // 点击了取消 就不操作
