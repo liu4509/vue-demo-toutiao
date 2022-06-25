@@ -21,6 +21,8 @@ const Search = () => import('@/views/Search/Search.vue')
 const SearchResult = () => import('@/views/SearchResult/SearchResult.vue')
 // 文章详情组件
 const ArticleDetail  = () => import('@/views/ArticleDetail/ArticleDetail.vue')
+// 编辑用户信息组件
+const UserEdit  = () => import('@/views/UserEdit/UserEdit.vue')
 
 Vue.use(VueRouter)
 
@@ -37,10 +39,14 @@ const routes = [
       { path: 'user', component: User, name: 'user'}
     ]
   },
+  // 编辑用户资料的路由规则
+  { path: '/user/edit', component: UserEdit, name: 'user-edit' },
+  // 搜索模块的路由
   { path: '/search', component: Search, name: 'search'},
   // 动态路由 :kw porps: true 可以传值
   { path: '/search/:kw', component: SearchResult, name: 'search-result', props: true },
-  { path: '/article/:id', component: ArticleDetail, name: 'art-detail',props: true}
+  { path: '/article/:id', component: ArticleDetail, name: 'art-detail', props: true }
+  
 ]
 
 const router = new VueRouter({
