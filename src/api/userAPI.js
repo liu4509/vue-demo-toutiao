@@ -22,7 +22,3 @@ export const updateUserProfileAPI = (obj) => {
 export const updateUserAvatarAPI = (fd) => {
   return request.patch("/v1_0/user/photo", fd);
 };
-// 换取 Token 的 API（形参中的 refreshToken 用来换取新 token）
-export const exchangeTokenAPI = (refreshToken) => {
-  return;
-};

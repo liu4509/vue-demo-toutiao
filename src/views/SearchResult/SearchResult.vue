@@ -77,9 +77,27 @@ export default {
   components: {
     ArtItem,
   },
+  watch: {
+    kw() {
+      // 1. 重置关键数据
+      this.page = 1;
+      this.artList = [];
+      this.loading = false;
+      this.finished = false;
+
+      // 2. 请求数据
+      this.initSearchResult();
+    },
+  },
   // 初始化 porps data methods 成功后启动
   created() {
     this.initSearchList();
+  },
+  beforeRouteLeave(to, from, next) {
+    from.meta.top = window.scrollY;
+    setTimeout(() => {
+      next();
+    }, 0);
   },
 };
 </script>

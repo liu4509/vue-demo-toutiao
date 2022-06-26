@@ -82,6 +82,10 @@ export default {
     ...mapState(["userInfo"]),
   },
   created() {
+    // this.initUserInfo();
+  },
+  // 被激活了 keep-alive 监听组件被激活的状态变化
+  activated() {
     this.initUserInfo();
   },
 };
